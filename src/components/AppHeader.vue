@@ -6,13 +6,13 @@ export default {
 
 <template lang="">
     <header>
-        <div class="container">
+        <div class="container mt-3">
             <div class="row">
-                <div class="col mt-4">
-                    <button type="button" class="circle btn btn-primary"></button>
-                    <button type="button" class="circle btn btn-danger"></button>
-                    <button type="button" class="circle btn btn-warning"></button>
-                    <button type="button" class="circle btn btn-success"></button>
+                <div class="col d-flex align-items-start">
+                    <button type="button" class="circle water"></button>
+                    <button type="button" class="circle-small fire"></button>
+                    <button type="button" class="circle-small electric"></button>
+                    <button type="button" class="circle-small grass"></button>
                 </div>
             </div>
         </div>
@@ -24,6 +24,35 @@ export default {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 5px solid white;
+    margin: 0 10px;
+}
+
+.circle-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 0 10px;
+}
+
+.water {
+    background: rgb(9, 1, 151);
+    background: linear-gradient(332deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 30%, rgba(255, 255, 255, 1) 100%);
+}
+
+.fire {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 7%, rgba(246, 3, 3, 1) 64%, rgba(108, 1, 1, 1) 98%);
+}
+
+.electric {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 22%, rgba(238, 246, 3, 1) 64%, rgba(251, 255, 1, 1) 98%);
+}
+
+.grass {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 22%, rgba(46, 246, 3, 1) 64%, rgba(8, 101, 0, 1) 94%);
 }
 </style>
