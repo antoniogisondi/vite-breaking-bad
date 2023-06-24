@@ -1,5 +1,9 @@
 <script>
+import AppPokemonSearch from './AppPokemonSearch.vue';
 export default {
+    components: {
+        AppPokemonSearch
+    }
 
 }
 </script>
@@ -13,6 +17,9 @@ export default {
                     <button type="button" class="circle-small fire"></button>
                     <button type="button" class="circle-small electric"></button>
                     <button type="button" class="circle-small grass"></button>
+                </div>
+                <div class="col">
+                    <AppPokemonSearch/>
                 </div>
             </div>
         </div>

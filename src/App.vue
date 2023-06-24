@@ -18,6 +18,10 @@ export default {
       store.pokemon_list = response.data.docs
       store.loading = false
     })
+
+    axios.get(store.typeUrl).then((response) => {
+      store.type_list = response.data
+    })
   },
 }
 </script>
