@@ -30,7 +30,18 @@ export default {
       let myUrl = store.apiUrl
 
       if (store.pokemon_type !== '') {
-        myUrl += `&eq[type1]=${store.pokemon_type}`
+        myUrl += `?eq[type1]=${store.pokemon_type}`
+      }
+
+      if (store.pokemon_type !== '') {
+        if (store.search_text !== '') {
+          myUrl += `&`
+        }
+        else {
+          myUrl += `?`
+        }
+
+        myUrl += `?eq[type1]=${store.pokemon_type}`
       }
       // VERIFICO SE FUNZIONA L'EMIT
       console.log('EMIT FUNZIONANTE')

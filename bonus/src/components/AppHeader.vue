@@ -21,6 +21,7 @@ export default {
                 </div>
 
                 <div class="col d-flex align-items-center">
+                    <input type="text" class="form-control" placeholder="Search Pokèmon" v-model="store.search_text">
                     <select class="form-select" v-model="store.pokemon_type">
                         <option selected>Select pokemon type</option>
                         <option v-for="(item, index) in store.type_list" :key="index" @click="$emit('select')">{{ item }}</option>
