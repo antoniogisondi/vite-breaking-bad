@@ -10,10 +10,10 @@ export default {
 </script>
 
 <template>
-    <div>
-        <select class="form-select w-50">
+    <div class="col d-flex justify-content-right">
+        <select class="form-select">
             <option selected>Select pokemon type</option>
-            <option v-for="(item, index) in store.type_list" :key="index">{{ item }}</option>
+            <option v-for="(item, index) in store.type_list" :key="index" @click="$emit('select')">{{ item }}</option>
         </select>
     </div>
 </template>

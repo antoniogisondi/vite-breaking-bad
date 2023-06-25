@@ -2,11 +2,13 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppPokemonList from './components/AppPokemonList.vue';
+import AppPokemonSearch from './components/AppPokemonSearch.vue';
 import { store } from './store.js';
 export default {
   components: {
     AppHeader,
     AppPokemonList,
+    AppPokemonSearch
   },
   data() {
     return {
@@ -22,15 +24,28 @@ export default {
     axios.get(store.typeUrl).then((response) => {
       store.type_list = response.data
     })
+
+    this.getPokemonType
+  },
+  methods: {
+    getPokemonType() {
+      // VERIFICO SE FUNZIONA L'EMIT
+      console.log('funziona emit')
+    }
   },
 }
 </script>
 
 <template lang="">
-  <div>
-    <AppHeader/>  
+  <header>
+    <div class="container mt-3">
+      <div class="row d-flex flex-row">
+        <AppHeader/>  
+        <AppPokemonSearch @select="getPokemonType"/>
+      </div>
+    </div>
+  </header>
     <AppPokemonList/>
-  </div>
 </template>
 
 <style lang="scss">

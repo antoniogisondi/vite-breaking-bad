@@ -1,29 +1,16 @@
 <script>
-import AppPokemonSearch from './AppPokemonSearch.vue';
 export default {
-    components: {
-        AppPokemonSearch
-    }
 
 }
 </script>
 
 <template lang="">
-    <header>
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col d-flex align-items-start">
-                    <button type="button" class="circle water"></button>
-                    <button type="button" class="circle-small fire"></button>
-                    <button type="button" class="circle-small electric"></button>
-                    <button type="button" class="circle-small grass"></button>
-                </div>
-                <div class="col">
-                    <AppPokemonSearch/>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="col d-flex align-items-start">
+        <button type="button" class="circle water"></button>
+        <button type="button" class="circle-small fire"></button>
+        <button type="button" class="circle-small electric"></button>
+        <button type="button" class="circle-small grass"></button>
+    </div>
 </template>
 
 <style lang="scss" scoped>
