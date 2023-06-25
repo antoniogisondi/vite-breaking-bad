@@ -29,6 +29,7 @@ export default {
 
       let myUrl = store.apiUrl
 
+      // creo la condizione che mi permette di filtrare i pokemon 
       if (store.pokemon_type !== '') {
         myUrl += `?eq[type1]=${store.pokemon_type}`
       }
@@ -64,5 +65,5 @@ export default {
 
 <style lang="scss">
 @use './styles/generals.scss' as *;
-@use './styles/partials/variables'
+@use './styles/partials/variables';
 </style>
