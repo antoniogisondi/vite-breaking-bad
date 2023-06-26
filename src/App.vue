@@ -31,7 +31,7 @@ export default {
 
       // creo la condizione che mi permette di filtrare i pokemon 
       if (store.search_text !== '') {
-        myUrl += `&eq[name]=${store.search_text}`
+        myUrl += `&q[name]=${store.search_text}`
       }
 
       if (store.pokemon_type !== '') {
@@ -53,8 +53,6 @@ export default {
       axios.get(myUrl).then((response) => {
         store.pokemon_list = response.data.docs
         store.loading = false
-        store.pokemon_type = ''
-        store.search_text = ''
       })
     }
   },

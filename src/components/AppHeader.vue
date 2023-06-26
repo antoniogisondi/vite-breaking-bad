@@ -7,6 +7,7 @@ export default {
         }
     },
     methods: {
+        // creo un metodo che resetta i campi di filtraggio
         resetSearch() {
             store.pokemon_type = ''
             store.search_text = ''
@@ -20,6 +21,7 @@ export default {
     <header>
         <div class="container">
             <div class="row d-flex flex-row">
+                <!-- creo una col puramente grafica che ricrei i bottoni del pokedex -->
                 <div class="col">
                     <button type="button" class="circle water"></button>
                     <button type="button" class="circle-small fire"></button>
@@ -29,7 +31,7 @@ export default {
 
                 <div class="col d-flex align-items-center">
                     <!-- creo l'input per cercare il nome del pokemon tramite text -->
-                    <input type="text" class="form-control me-2" placeholder="Search Pokèmon" v-model="store.search_text" @keyup.enter="$emit('select')">
+                    <input type="text" class="form-control me-2" placeholder="Search Pokèmon" v-model="store.search_text" @input="$emit('select')">
                     <!-- creo la select per filtrare i pokemon tramite tipo -->
                     <select class="form-select me-2" v-model="store.pokemon_type">
                         <option selected @click="resetSearch">Select pokemon type</option>
