@@ -6,6 +6,13 @@ export default {
             store
         }
     },
+    methods: {
+        resetSearch() {
+            store.pokemon_type = ''
+            store.search_text = ''
+            this.$emit('select')
+        }
+    },
 }
 </script>
 
@@ -24,11 +31,12 @@ export default {
                     <!-- creo l'input per cercare il nome del pokemon tramite text -->
                     <input type="text" class="form-control me-2" placeholder="Search Pokèmon" v-model="store.search_text" @keyup.enter="$emit('select')">
                     <!-- creo la select per filtrare i pokemon tramite tipo -->
-                    <select class="form-select" v-model="store.pokemon_type">
-                        <option selected>Select pokemon type</option>
+                    <select class="form-select me-2" v-model="store.pokemon_type">
+                        <option selected @click="resetSearch">Select pokemon type</option>
                         <!-- ciclo l'array dei tipi di pokemon -->
                         <option v-for="(item, index) in store.type_list" :key="index" @click="$emit('select')">{{ item }}</option>
                     </select>
+                    <button type="button" class="btn btn-warning" @click="resetSearch">Reset</button>
                 </div>
             </div>
         </div>

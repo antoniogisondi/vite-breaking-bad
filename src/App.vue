@@ -31,19 +31,9 @@ export default {
 
       // creo la condizione che mi permette di filtrare i pokemon 
       if (store.pokemon_type !== '') {
-        myUrl += `?eq[type1]=${store.pokemon_type}`
+        myUrl += `/?eq[type1]=${store.pokemon_type}`
       }
 
-      if (store.pokemon_type !== '') {
-        if (store.search_text !== '') {
-          myUrl += `&`
-        }
-        else {
-          myUrl += `?`
-        }
-
-        myUrl += `?eq[type1]=${store.pokemon_type}`
-      }
       // VERIFICO SE FUNZIONA L'EMIT
       console.log('EMIT FUNZIONANTE')
 
@@ -51,6 +41,8 @@ export default {
       axios.get(myUrl).then((response) => {
         store.pokemon_list = response.data.docs
         store.loading = false
+        store.pokemon_type = ''
+        store.search_text = ''
       })
     }
   },
