@@ -30,12 +30,24 @@ export default {
       let myUrl = store.apiUrl
 
       // creo la condizione che mi permette di filtrare i pokemon 
+      if (store.search_text !== '') {
+        myUrl += `&eq[name]=${store.search_text}`
+      }
+
       if (store.pokemon_type !== '') {
-        myUrl += `/?eq[type1]=${store.pokemon_type}`
+        if (store.search_text !== '') {
+          myUrl += `&`
+        }
+        else {
+          myUrl += `?`
+        }
+
+        myUrl += `&eq[type1]=${store.pokemon_type}`
       }
 
       // VERIFICO SE FUNZIONA L'EMIT
       console.log('EMIT FUNZIONANTE')
+      console.log(myUrl)
 
       // effettuo la chiamata ad axios per popolare l'array dei pokemon
       axios.get(myUrl).then((response) => {

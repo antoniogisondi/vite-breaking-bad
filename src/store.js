@@ -2,7 +2,7 @@ import { reactive } from "vue";
 
 export const store = reactive({
     // dichiaro la variabile apiUrl che ha come valore l'API 
-    apiUrl: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons',
+    apiUrl: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/?per=1050',
     // array vuoto da popolare con la risposta dell'API contenuta in apiUrl
     pokemon_list: [],
     search_text: '',

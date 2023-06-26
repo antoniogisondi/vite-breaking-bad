@@ -13,6 +13,15 @@ export default {
             store
         }
     },
+    methods: {
+        searchPage() {
+            axios.get(myUrl).then((response) => {
+                store.pokemon_list = response.data.docs
+                store.loading = false
+
+            })
+        }
+    },
 }
 </script>
 
