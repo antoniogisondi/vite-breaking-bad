@@ -31,7 +31,7 @@ export default {
 
       // creo la condizione che mi permette di filtrare i pokemon 
       if (store.search_text !== '') {
-        myUrl += `&q[name]=${store.search_text}`
+        myUrl += `/?q[name]=${store.search_text}`
       }
 
       if (store.pokemon_type !== '') {
@@ -39,7 +39,7 @@ export default {
           myUrl += `&`
         }
         else {
-          myUrl += `?`
+          myUrl += `/?`
         }
 
         myUrl += `&eq[type1]=${store.pokemon_type}`
